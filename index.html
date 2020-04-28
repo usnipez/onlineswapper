@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sᴡᴀᴘᴘᴇʀs</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="jslib.js"></script>
+    <meta name="description" content="swappers.fun provides you with tutorials from real swapper developers, sources, skin bytes, and even a functioning web based swapper. Using our site will enable you to make your own skin swapper in less than a week.">
+  </head>
+  <body style="background-color: #000; overflow: hidden;" onload="lowerVolume()">
+    <div class="imageBox">
+        <video id="background" loop="" autoplay>
+            <source src="imgs/milk9.jpg" type="image/jpg" autoplay>
+            <script>
+                var video = document.getElementById("background");
+                app.videoElement = video;
+                app.videoElement.volume = 0;
+            </script>
+        </video>
+        <script>
+    document.getElementById('background').play();
+    </script>
+    </div>
+    <div class="main">
+    <div id="main" class="centeredBox">
+      <a href="#" onclick="displayNews()">News</a><br><br>
+      <a href="Client.exe">Download Client</a><br><br>
+      <a href="#" onclick="displaySkinSwapper()">Skin Swappers</a><br><br>
+      <a href="#" onclick="displaySkinBytes()">HXD Codes</a><br><br>
+      <a href="#" onclick="displaySources()">Skin Swapper Source's</a><br><br>
+      <a href="#">Tutorials</a><br><br>
+    </div>
+
+    <div id="newsPage" class="centeredBox2" style="display: none">
+      <a class="munitcs" href="#" onclick="displayMain()"><img class="munitcs" style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+    </div><br>
+    <div id="newsPage2" style="padding: 1px 10px; display: none;" class="newsBox">
+      <p>April 24th, 2020_Notes:<br>- CP method released from multiple sources
+      </p>
+    </div>
+
+    <div style="display: none;" id="skinSwapper" class="centeredBox">
+      <a class="munitcs" href="#" onclick="displayMain()"><img style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+      <a href="#" onclick="startScan()" id="statusLoading">scan for client</a>
+      <div id="swapOptions" style="display: none;">
+        <div id="skinsPage1">
+          <a href="#" id="shinytofncs" onclick="convertFNCS()">shiny -> fncs pickaxe</a><br><br>
+          <a href="#" id="fncstoshiny" onclick="revertFNCS()">fncs pickaxe -> shiny</a><br><br>
+          <a href="#" id="defaulttoraiders" onclick="convertRaidersRevenge()">default pickaxe -> raiders revenge</a><br><br>
+          <a href="#" id="raiderstodefault" onclick="revertRaidersRevenge()">raiders revenge -> default pickaxe</a><br><br>
+          <a href="#" id="defaulttotrusty" onclick="convertTrustNo2()">default pickaxe -> trusty no.2</a><br><br>
+          <a href="#" id="trustytodefault" onclick="revertTrustNo2()">trusty no.2 -> default pickaxe</a><br><br>
+          <tamriel style="color: red;">-------------------</tamriel><br><br>
+          <a href="#" onclick="goPage2()">page 2</a><br><br>
+        </div>
+        <div style="display: none;" id="skinsPage2">
+          <a href="#" id="evergreentoheadhunter" onclick="convertHeadhunter()">lt evergreen -> headhunter (og default)</a><br><br>
+          <a href="#" id="headhuntertoevergreen" onclick="revertHeadhunter()">headhunter (og default) -> lt evergreen</a><br><br>
+          <a href="#" id="evergreentostealth" onclick="convertStealthReflex()">lt evergreen -> stealth reflex</a><br><br>
+          <a href="#" id="stealthtoevergreen" onclick="revertStealthReflex()">stealth reflex -> lt evergreen</a><br><br>
+          <a href="#" id="evergreentoblackknight" onclick="convertBlackKnight()">lt evergreen -> black knight</a><br><br>
+          <a href="#" id="blackknighttoevergreen" onclick="revertBlackKnight()">black knight -> lt evergreen</a><br><br>
+          <tamriel style="color: red;">-------------------</tamriel><br><br>
+          <a href="#" onclick="goPage1()">page 1</a> <tamriel style="color: red;">-</tamriel> <a href="#" onclick="goPage3()">page 3</a><br><br>
+        </div>
+        <div style="display: none;" id="skinsPage3">
+          <a href="#" id="woolytocyberninja" onclick="convertCyberNinja()">wooly warrior -> cyber ninja</a><br><br>
+          <a href="#" id="cyberninjatowooly" onclick="revertCyberNinja()">cyber ninja -> wooly warrior</a><br><br>
+          <a href="#" id="woolytovalninja" onclick="convertValentineNinja()">wooly warrior -> valentine ninja</a><br><br>
+          <a href="#" id="valninjatowooly" onclick="revertValentineNinja()">valentine ninja -> wooly warrior</a><br><br>
+          <tamriel style="color: red;">-------------------</tamriel><br><br>
+          <a href="#" onclick="goPage2()">page 2</a> <tamriel style="color: red;">-</tamriel> <a href="#" onclick="goPage3()">page 4</a><br><br>
+        </div>
+        <a href="#" id="setPakLocation" onclick="displayPakSetter()">set pak location</a><br><br>
+        <a href="#" onclick="resetState()">close connection</a>
+      </div>
+    </div>
+
+    <div style="display: none;" id="pakLocation" class="centeredBox">
+      <a class="munitcs" href="#" onclick="displayMain()"><img style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+      <input id="pakFolder" class="inputText" type="text" placeholder="pak location" /><br><br>
+      <a href="#" id="pakStatus" onclick="confirmPak()">set pak location</a>
+    </div>
+
+    <div style="display: none;" id="skinBytes" class="centeredBox">
+      <a class="munitcs" href="#" onclick="displayMain()"><img style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+      <a href="#" onclick="displayAJBytes()">lt evergreen -> astro jack</a><br><br>
+      <a href="#" onclick="displayStealthReflex()">lt evergreen -> stealth reflex</a><br><br>
+      <a href="#" onclick="displayBKBytes()">lt evergreen -> black knight</a><br><br>
+      <a href="#" onclick="displayConstructorBK()">lt evergreen -> constructor bk</a><br><br>
+    </div>
+
+    <div style="display: none;" id="sources" class="centeredBox">
+      <a class="munitcs" href="#" onclick="displayMain()"><img style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+      <a href="sources/ZYX_Source.zip">zyx swapper last update (no errors)</a><br><br>
+    </div>
+
+    <div style="display: none;" id="bkMainTag">
+    <div class="centeredBox2">
+      <a class="munitcs" href="#" onclick="displayMain()"><img class="munitcs" style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+    </div><br>
+    <div style="padding: 1px 10px;" class="newsBox2">
+      <p>Use these codes with HxD to swap LT. Evergreen to Black Knight:<br><br>- CP - (CTRL + R and then replace all)<br>
+          CP_Athena_Body_M_OrnamentSoldier<br>
+          CP_Athena_Body_M_OrnamentSold1er<br><br>
+
+          - CP2 -<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_Body_Commando_F_RebirthDefaultA.CP_Body_Commando_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 41 74 68 65 6e 61 2f 48 65 72 6f 65 73 2f 4d 65 73 68 65 73 2f 42 6f 64 69 65 73 2f 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_commando_KnightB_M.CP_commando_KnightB_M<br>
+2F 47 61 6D 65 2F 41 74 68 65 6E 61 2F 48 65 72 6F 65 73 2F 4D 65 73 68 65 73 2F 42 6F 64 69 65 73 2F 43 50 5F 63 6F 6D 6D 61 6E 64 6F 5F 4B 6E 69 67 68 74 42 5F 4D 2E 43 50 5F 63 6F 6D 6D 61 6E 64 6F 5F 4B 6E 69 67 68 74 42 5F 4D 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00<br><br>
+
+          /Game/Characters/CharacterParts/Female/Medium/Heads/CP_Head_F_RebirthDefaultA.CP_Head_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 43 68 61 72 61 63 74 65 72 73 2f 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2f 46 65 6d 61 6c 65 2f 4d 65 64 69 75 6d 2f 48 65 61 64 73 2f 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Characters/CharacterParts/Hats/Hat_M_Commando_BlackKnight.Hat_M_Commando_BlackKnight<br>
+2F 47 61 6D 65 2F 43 68 61 72 61 63 74 65 72 73 2F 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2F 48 61 74 73 2F 48 61 74 5F 4D 5F 43 6F 6D 6D 61 6E 64 6F 5F 42 6C 61 63 6B 4B 6E 69 67 68 74 2E 48 61 74 5F 4D 5F 43 6F 6D 6D 61 6E 64 6F 5F 42 6C 61 63 6B 4B 6E 69 67 68 74 00 00 00 00 00 00 00 00 00 00 00 00 00<br>
+      </p>
+    </div>
+    </div>
+
+    <div style="display: none;" id="astrojackMainTag">
+    <div class="centeredBox2">
+      <a class="munitcs" href="#" onclick="displayMain()"><img class="munitcs" style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+    </div><br>
+    <div style="padding: 1px 10px;" class="newsBox2">
+      <p>Use these codes with HxD to swap LT. Evergreen to Astro Jack:<br><br>- CP - (CTRL + R and then replace all)<br>
+          CP_Athena_Body_M_OrnamentSoldier<br>
+          CP_Athena_Body_M_OrnamentSold1er<br><br>
+
+          - CP2 -<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_Body_Commando_F_RebirthDefaultA.CP_Body_Commando_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 41 74 68 65 6e 61 2f 48 65 72 6f 65 73 2f 4d 65 73 68 65 73 2f 42 6f 64 69 65 73 2f 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_Athena_Body_M_CycloneSpace.CP_Athena_Body_M_CycloneSpace<br>
+          2F 47 61 6D 65 2F 41 74 68 65 6E 61 2F 48 65 72 6F 65 73 2F 4D 65 73 68 65 73 2F 42 6F 64 69 65 73 2F 43 50 5F 41 74 68 65 6E 61 5F 42 6F 64 79 5F 4D 5F 43 79 63 6C 6F 6E 65 53 70 61 63 65 2E 43 50 5F 41 74 68 65 6E 61 5F 42 6F 64 79 5F 4D 5F 43 79 63 6C 6F 6E 65 53 70 61 63 65 00 00 00 00 00 00 00 00 00 00<br><br>
+
+          /Game/Characters/CharacterParts/Female/Medium/Heads/CP_Head_F_RebirthDefaultA.CP_Head_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 43 68 61 72 61 63 74 65 72 73 2f 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2f 46 65 6d 61 6c 65 2f 4d 65 64 69 75 6d 2f 48 65 61 64 73 2f 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Characters/CharacterParts/FaceAccessories/CP_M_MED_CycloneSpace.CP_M_MED_CycloneSpace<br>
+          2F 47 61 6D 65 2F 43 68 61 72 61 63 74 65 72 73 2F 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2F 46 61 63 65 41 63 63 65 73 73 6F 72 69 65 73 2F 43 50 5F 4D 5F 4D 45 44 5F 43 79 63 6C 6F 6E 65 53 70 61 63 65 2E 43 50 5F 4D 5F 4D 45 44 5F 43 79 63 6C 6F 6E 65 53 70 61 63 65 00 00 00 00 00 00 00 00 00 00 00 00<br>
+      </p>
+    </div>
+    </div>
+
+    <div style="display: none;" id="constructorBKMainTag">
+    <div class="centeredBox2">
+      <a class="munitcs" href="#" onclick="displayMain()"><img class="munitcs" style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+    </div><br>
+    <div style="padding: 1px 10px;" class="newsBox2">
+      <p>Use these codes with HxD to swap LT. Evergreen to Constructor BK:<br><br>- CP - (CTRL + R and then replace all)<br>
+          CP_Athena_Body_M_OrnamentSoldier<br>
+          CP_Athena_Body_M_OrnamentSold1er<br><br>
+
+          - CP2 -<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_Body_Commando_F_RebirthDefaultA.CP_Body_Commando_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 41 74 68 65 6e 61 2f 48 65 72 6f 65 73 2f 4d 65 73 68 65 73 2f 42 6f 64 69 65 73 2f 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Characters/CharacterParts/Male/Large/Bodies/CP_Body_Constructor_018_SR.CP_Body_Constructor_018_SR<br>
+2F 47 61 6D 65 2F 43 68 61 72 61 63 74 65 72 73 2F 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2F 4D 61 6C 65 2F 4C 61 72 67 65 2F 42 6F 64 69 65 73 2F 43 50 5F 42 6F 64 79 5F 43 6F 6E 73 74 72 75 63 74 6F 72 5F 30 31 38 5F 53 52 2E 43 50 5F 42 6F 64 79 5F 43 6F 6E 73 74 72 75 63 74 6F 72 5F 30 31 38 5F 53 52<br><br>
+
+          /Game/Characters/CharacterParts/Female/Medium/Heads/CP_Head_F_RebirthDefaultA.CP_Head_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 43 68 61 72 61 63 74 65 72 73 2f 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2f 46 65 6d 61 6c 65 2f 4d 65 64 69 75 6d 2f 48 65 61 64 73 2f 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Characters/CharacterParts/Hats/Hat_M_LRG_Blackknight.Hat_M_LRG_Blackknight<br>
+2F 47 61 6D 65 2F 43 68 61 72 61 63 74 65 72 73 2F 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2F 48 61 74 73 2F 48 61 74 5F 4D 5F 4C 52 47 5F 42 6C 61 63 6B 6B 6E 69 67 68 74 2E 48 61 74 5F 4D 5F 4C 52 47 5F 42 6C 61 63 6B 6B 6E 69 67 68 74 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00<br>
+      </p>
+    </div>
+    </div>
+
+    <div style="display: none;" id="stealthReflexMainTag">
+    <div class="centeredBox2">
+      <a class="munitcs" href="#" onclick="displayMain()"><img class="munitcs" style="border-radius: 0px;" width="149" height="45" src="swappers.png"></a><br><br>
+    </div><br>
+    <div style="padding: 1px 10px;" class="newsBox2">
+      <p>Use these codes with HxD to swap LT. Evergreen to Stealth Reflex:<br><br>- CP - (CTRL + R and then replace all)<br>
+          CP_Athena_Body_M_OrnamentSoldier<br>
+          CP_Athena_Body_M_OrnamentSold1er<br><br>
+
+          - CP2 -<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_Body_Commando_F_RebirthDefaultA.CP_Body_Commando_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 41 74 68 65 6e 61 2f 48 65 72 6f 65 73 2f 4d 65 73 68 65 73 2f 42 6f 64 69 65 73 2f 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 42 6f 64 79 5f 43 6f 6d 6d 61 6e 64 6f 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Athena/Heroes/Meshes/Bodies/CP_Athena_Body_M_StreetOpsStealth.CP_Athena_Body_M_StreetOpsStealth<br>
+          2F 47 61 6D 65 2F 41 74 68 65 6E 61 2F 48 65 72 6F 65 73 2F 4D 65 73 68 65 73 2F 42 6F 64 69 65 73 2F 43 50 5F 41 74 68 65 6E 61 5F 42 6F 64 79 5F 4D 5F 53 74 72 65 65 74 4F 70 73 53 74 65 61 6C 74 68 2E 43 50 5F 41 74 68 65 6E 61 5F 42 6F 64 79 5F 4D 5F 53 74 72 65 65 74 4F 70 73 53 74 65 61 6C 74 68 00 00<br><br>
+          /Game/Characters/CharacterParts/Female/Medium/Heads/CP_Head_F_RebirthDefaultA.CP_Head_F_RebirthDefaultA<br>
+          2f 47 61 6d 65 2f 43 68 61 72 61 63 74 65 72 73 2f 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2f 46 65 6d 61 6c 65 2f 4d 65 64 69 75 6d 2f 48 65 61 64 73 2f 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41 2e 43 50 5f 48 65 61 64 5f 46 5f 52 65 62 69 72 74 68 44 65 66 61 75 6c 74 41<br>
+          /Game/Characters/CharacterParts/FaceAccessories/CP_M_MED_StreetOpsStealth.CP_M_MED_StreetOpsStealth<br>
+          2F 47 61 6D 65 2F 43 68 61 72 61 63 74 65 72 73 2F 43 68 61 72 61 63 74 65 72 50 61 72 74 73 2F 46 61 63 65 41 63 63 65 73 73 6F 72 69 65 73 2F 43 50 5F 4D 5F 4D 45 44 5F 53 74 72 65 65 74 4F 70 73 53 74 65 61 6C 74 68 2E 43 50 5F 4D 5F 4D 45 44 5F 53 74 72 65 65 74 4F 70 73 53 74 65 61 6C 74 68 00 00 00 00      </p>
+    </div>
+    </div>
+
+    </div>
+  </body>
+  <script>
+
+    function lowerVolume(){
+      document.getElementById("background").volume = 0.1;
+      document.getElementById("background").play();
+    }
+
+    var main = document.getElementById("main");
+    var newsPage = document.getElementById("newsPage");
+    var newsPage2 = document.getElementById("newsPage2");
+    var skinBytes = document.getElementById("skinBytes");
+    var sources = document.getElementById("sources");
+    var bkBytes = document.getElementById("bkMainTag");
+    var astroBytes = document.getElementById("astrojackMainTag");
+    var constructorBK = document.getElementById("constructorBKMainTag");
+    var stealthReflex = document.getElementById("stealthReflexMainTag");
+    var skinSwapper = document.getElementById("skinSwapper");
+    var swapOptions = document.getElementById("swapOptions");
+    var statusLoading = document.getElementById("statusLoading");
+    var pakSetter = document.getElementById("pakLocation");
+
+    function clear(){
+      newsPage.style.display = "none";
+      newsPage2.style.display = "none";
+      main.style.display = "none";
+      skinBytes.style.display = "none";
+      sources.style.display = "none";
+      bkBytes.style.display = "none";
+      astroBytes.style.display = "none";
+      constructorBK.style.display = "none";
+      stealthReflex.style.display = "none";
+      skinSwapper.style.display = "none";
+      pakSetter.style.display = "none";
+    }
+    function displayMain(){
+      clear();
+      main.style.display = "block";
+    }
+    function displayNews(){
+      clear();
+      newsPage.style.display = "block";
+      newsPage2.style.display = "block";
+    }
+    function displaySkinBytes(){
+      clear();
+      skinBytes.style.display = "block";
+    }
+    function displaySources(){
+      clear();
+      sources.style.display = "block";
+    }
+    function displayBKBytes(){
+      clear();
+      bkBytes.style.display = "block";
+    }
+    function displayAJBytes(){
+      clear();
+      astroBytes.style.display = "block";
+    }
+    function displayConstructorBK(){
+      clear();
+      constructorBK.style.display = "block";
+    }
+    function displayStealthReflex(){
+      clear();
+      stealthReflex.style.display = "block";
+    }
+    function displaySkinSwapper(){
+      clear();
+      skinSwapper.style.display = "block";
+    }
+    function displaySwapOptions(){
+      statusLoading.style.display = "none";
+      swapOptions.style.display = "block";
+    }
+    function displayPakSetter(){
+      clear();
+      pakSetter.style.display = "block";
+    }
+
+    var wsUri = "ws://localhost:8088";
+    var today = new Date();
+    var time = "[" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + "] ";
+
+    function init()
+    {
+
+    }
+
+    function startScan() {
+      testWebSocket();
+      document.getElementById("statusLoading").innerHTML = "scanning...";
+    }
+
+    function testWebSocket()
+    {
+      websocket = new WebSocket(wsUri);
+      websocket.onopen = function(evt) { onOpen(evt) };
+      websocket.onclose = function(evt) { onClose(evt) };
+      websocket.onmessage = function(evt) { onMessage(evt) };
+      websocket.onerror = function(evt) { onError(evt) };
+    }
+
+    function resetState(){
+      document.getElementById("statusLoading").style.display = "block";
+      document.getElementById("statusLoading").innerHTML = "scan for client";
+      document.getElementById("swapOptions").style.display = "none";
+      document.getElementById("pakLocation").style.display = "none";
+      doSend("Y2xvc2VB");
+    }
+
+    function onOpen(evt)
+    {
+      displaySwapOptions();
+    }
+
+    function onClose(evt)
+    {
+      resetState();
+      return false;
+    }
+
+    function onMessage(evt)
+    {
+      if (evt.data == "invpakloc"){
+        settingsButtonINVALID();
+      } else if (evt.data == "valpakloc") {
+        settingsButtonVALID();
+      }
+    }
+
+    function onError(evt)
+    {
+       testWebSocket();
+    }
+
+    function doSend(message)
+    {
+      websocket.send(message);
+    }
+
+    function writeToStatus(message){
+      output.innerHTML = message;
+    }
+
+    function writeToScreen(message)
+    {
+      var pre = document.createElement("p");
+      pre.style.wordWrap = "break-word";
+      pre.innerHTML = message;
+      output.appendChild(pre);
+    }
+
+    window.addEventListener("load", init, false);
+  </script>
+</html>

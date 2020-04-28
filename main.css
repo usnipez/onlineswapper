@@ -1,0 +1,272 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: "Courier New", Courier, Monaco;
+  margin: 0;
+  font-size: 11px;
+  cursor:url(imgs/cursor.png), auto;
+}
+
+.imageBox {
+  position: absolute;
+  animation: fadeIn ease 4s;
+  -webkit-animation: fadeIn ease 4s;
+  -moz-animation: fadeIn ease 4s;
+  -o-animation: fadeIn ease 4s;
+  -ms-animation: fadeIn ease 4s;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('imgs/milk.jpg');
+  transition: 0.1s;
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.centeredBox {
+  width: 400px;
+  height: 100px;
+  margin-top: calc(25% - 150px);
+  margin-left: 47%;
+  text-align: left;
+}
+
+.specialUnderline {
+  color: red;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.disabledDiv {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  color: white;
+  width: calc(50% - 35px);
+  height: 400px;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 25%);
+  top: calc(50% - 200px);
+}
+
+.centeredBox2 {
+  width: 400px;
+  height: 45px;
+  margin-top: 15%;
+  margin-left: calc(50% - 75px);
+  text-align: left;
+}
+
+.newsBox {
+  width: 600px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-left: calc(50% - 300px);
+}
+
+.newsBox2 {
+  width: 600px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin-left: calc(50% - 300px);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.inputText {
+  background-color: red;
+  color: white;
+  height: 12px;
+  width: 149px;
+  border: 1px solid transparent;
+  outline: none;
+  font-family: "Courier New", Courier, Monaco;
+  font-size: 11px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
+::selection {
+  background: red;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 1px 1px;
+  user-select: none;
+  cursor:url(imgs/cursor.png), auto;
+}
+
+.munitcs {
+  background-color: transparent;
+}
+
+.munitcs:hover {
+  background-color: transparent;
+}
+
+br {
+  user-select: none;
+}
+
+a:hover {
+  background-color: red;
+}
+
+.header {
+  text-align: center;
+  background-color: red;
+  height: 13px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.skins {
+  display: flex;
+  position: absolute;
+  left: calc(50% - 25%);
+  top: calc(50% - 200px);
+  width: calc(50% - 35px);
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  margin: 5px 5px;
+  position: relative;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.convert {
+  height: 12px;
+  width: 50%;
+  cursor: default;
+  text-align: center;
+  position: absolute;
+  user-select: none;
+  top: 68px;
+  border-right: 1px solid #aaa;
+  left: 0;
+  background-color: red;
+  border-bottom-left-radius: 4px;
+  transition: 0.3s;
+}
+
+.revert {
+  height: 12px;
+  width: calc(50% - 1px);
+  text-align: center;
+  user-select: none;
+  position: absolute;
+  top: 68px;
+  cursor: default;
+  left: calc(50% + 1px);
+  background-color: red;
+  border-bottom-right-radius: 4px;
+  transition: 0.3s;
+}
+
+.revert:hover {
+  background-color: #aaa;
+}
+
+.convert:hover{
+  background-color: #aaa;
+}
+
+.item:hover{
+  border: 1px solid red;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  20% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+}
